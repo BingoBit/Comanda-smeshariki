@@ -1,0 +1,22 @@
+.greetingContainerBG{
+    width: 100%;
+    background: #18251B;
+    max-height: 400px;
+}
+.greetingContainer{
+    max-height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+@media (max-width:1200px) {
+    .greetingContainerBG{
+        display: none;
+    }
+}
+
+

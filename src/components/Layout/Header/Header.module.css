@@ -1,0 +1,214 @@
+.headerContainer{
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    transition: all 500ms ease;
+    z-index: 1000;
+    background: linear-gradient(-5deg, #378D5A,  #27332C);
+}
+
+
+.menu{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mobileMenu, .burger_menu{
+    display: none;
+}
+
+.logo img{
+    max-width: 60px;
+}
+
+.nav{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav a{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+#deliverIcon{
+    position:relative;
+    display: flex;
+    gap: 10px;
+}
+
+.counterCart{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 32px;
+    background: white;
+    color: black;
+}
+
+.counterCart.active{
+    animation: apperanceCounter 300ms ease forwards;
+}
+
+.counterCart.noactive{
+    transform: scale(0);
+    animation: disapperanceCounter 300ms ease forwards;
+}
+
+
+@keyframes apperanceCounter {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+@keyframes disapperanceCounter {
+    0%{
+        transform: scale(1);
+    }
+    
+    100%{
+        transform: scale(0);
+    }
+}
+
+
+@media (max-width:1200px) {
+    .menu{
+        max-width: 768px;
+    }
+    .nav{
+        gap: 20px;
+    }
+
+    .logo img{
+        max-width: 50px;
+    }
+    .deliver_favour{
+        gap: 20px;
+    }
+
+    .counterCart{
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .headerContainer{
+        height: 40px;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .mobileMenu{
+        max-width: 400px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .mobileMenu a{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .mobileMenu img{
+        max-height: 35px;
+    }
+
+    .logo img{
+        max-width: 30px;
+    }
+
+    .burger_menu{
+        display: flex;
+        justify-content: center;
+        background: white;
+        z-index: 999;
+        height: 100vh;
+    }
+    .burger_nav{
+        max-width: 400px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 5px;
+        align-items: start;
+        justify-content: center;
+        padding: 10px 0;
+        max-height: max-content;
+    }
+    .burger_nav a{
+        position: relative;
+        width:40%;
+        padding: 10px;
+        height: calc(100vh/6);
+        text-decoration: none;
+        color: white;
+        border: 1px solid gainsboro;
+        border-radius: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        background: linear-gradient(-45deg, #378D5A, #74DC9E, #27332C);
+        background-size: 300% 300%;
+        cursor: pointer;
+        animation: nothover 1000ms ease forwards;
+        &:hover{
+            animation: hover 1000ms ease forwards  ;
+        }
+    }
+
+
+    .counter{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 32px;
+        color: white;
+        background: none;
+        right: 20px;
+        bottom: 15px;
+    }
+}
+
+@keyframes hover {
+    0%{
+        background-position: 0% 0%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+
+@keyframes nothover {
+    0%{
+        background-position: 0% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
